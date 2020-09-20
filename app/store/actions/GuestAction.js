@@ -2,7 +2,7 @@ import { RSAA } from 'redux-api-middleware';
 import { API_ENDPOINT, AUTH_HEADERS } from '../../utils/constants';
 import * as types from '../types';
 
-export const getCreatGuest = (body) => {
+export const creatGuest = (body) => {
     return {
         [RSAA]: {
             endpoint: API_ENDPOINT + '/guest/create',

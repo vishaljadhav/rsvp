@@ -3,23 +3,24 @@ import { setInitialState } from '../initial_state';
 import { act } from 'react-test-renderer';
 
 
-const INITIAL_SATE = setInitialState({
-    data: null
+const INITIAL_STATE = setInitialState({
+    data: null,
 });
 
-export default function (state = INITIAL_SATE, action) {
+
+export default function (state = INITIAL_STATE, action) {
     switch (action.type) {
         case types.CREATE_GUEST_REQUEST:
             return {
                 ...state,
-                isFetching: false
+                isFetching: true,
             };
         case types.CREATE_GUEST_RECEIVE:
             return {
                 ...state,
-                isFetching: true,
+                isFetching: false,
                 isSuccess: true,
-                data: action.payload.success
+                data: action.payload
             };
         case types.CREATE_GUEST_FAILURE:
             return {
@@ -32,10 +33,9 @@ export default function (state = INITIAL_SATE, action) {
             return {
                 ...state,
                 isFetching: false,
-                isSuccess: false,
                 isError: false,
-                data: null
-            }
+                data: null,
+            };
         default:
             return {
                 ...state

@@ -10,6 +10,11 @@ const Style = StyleSheet.create({
         flex: 1,
         marginHorizontal: 30,
         marginVertical: 10,
+    },
+    header: {
+        fontSize: 16,
+        fontWeight: "bold",
+        marginBottom: 10,
     }
 });
 
