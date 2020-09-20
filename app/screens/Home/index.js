@@ -7,7 +7,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import * as action from '../../store/actions';
 
-import { Input } from '../../components';
+import { Input, Date } from '../../components';
 
 import style from '../../assets/styles/theme';
 import { TouchableHighlight } from 'react-native-gesture-handler';
@@ -41,7 +41,6 @@ const Home = (props) => {
         { cancelable: false }
       );
       dispatch(action.resetCreatGuest())
-
     }
   })
 
@@ -69,9 +68,7 @@ const Home = (props) => {
           }} label="Age" keyboard="number"
             required={true} />
 
-          <Input onChangeText={(res) => {
-
-          }} label="Date" />
+          <Date label="Date" />
 
           <Input onChangeText={(res) => {
             setProfession(res)
