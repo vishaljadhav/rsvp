@@ -60,9 +60,10 @@ const Stats = (props) => {
   return (
     <SafeAreaView style={style.sf_wpr}>
       <View style={style.cnt_wpr}>
+        <Text style={style.header}>Static Pie Charts</Text>
         <PieChart
           data={data}
-          width={Dimensions.get('screen').width}
+          width={Dimensions.get('window').width - 100}
           height={220}
           chartConfig={chartConfig}
           accessor="population"
